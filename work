@@ -1,0 +1,17 @@
+matrix_rows=int(input("enter the number of rows:"))
+matrix_cols=int(input("enter the number of columns:"))
+pattern= [[0 for x in range(matrix_cols)] for y in range(matrix_rows)]
+
+counter=1
+for k in range(matrix_cols+matrix_rows+1):
+    for j in range(k+1):
+        i = k-j
+
+        if(i < matrix_rows and j < matrix_cols):
+            pattern[i][j] = counter
+            counter+= 1
+
+for i in range(matrix_rows):
+    for j in range(matrix_cols):
+        print(pattern[i][j], end=" ")
+    print()
